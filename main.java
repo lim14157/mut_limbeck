@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class Uebung1 {
 
-	public static void main(String[] args){
-		System.out.println("Hello World");
 public class Uebung2 {
 
 	
