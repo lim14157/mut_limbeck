@@ -1,29 +1,28 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
+public class Uebung3 {
 
-public class Uebung2 {
+	public static void main(String[] args) {
 
-	
-	
-	public static void main(String[] args) throws FileNotFoundException {
-		String name = null;
-		
-		System.out.println("Enter your name: ");
-		
-		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-		
+		System.out.println("Enter your firstname : ");
+
 		try {
-			name = console.readLine();
-		}catch (IOException e){ e.printStackTrace(); }
-		
-		System.out.println("Length " + name.length() + "\n");
-		System.out.println("Hallo " + name);
-		
+			BufferedReader bufferRead1 = new BufferedReader(
+					new InputStreamReader(System.in));
+			String s1 = bufferRead1.readLine();
+
+			System.out.println("Now enter you lastname : ");
+			BufferedReader bufferRead2 = new BufferedReader(
+					new InputStreamReader(System.in));
+			String s2 = bufferRead2.readLine();
+
+			System.out.println("Hello " + s1 + " " + s2);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
+
 }
