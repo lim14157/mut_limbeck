@@ -2,26 +2,39 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Uebung4 {
+
+public class Uebung6 {
 
 	/**
-	 * int main(int argc, char **argv) { char name[255];
-	 * printf("Enter your name: "); fgets(name, 255, stdin);
-	 * printf("length = %d\n", strlen(name)); name[strlen(name)-1] = '\0';
-	 * printf("Hello, %s!\n", name); return 0; }
+	 * @param args
 	 */
 	public static void main(String[] args) {
-		String name = null;
 
-		System.out.println("Enter your name: ");
+		String[] stringArr = askname();
+		
+		System.out.println("Your name : "  + stringArr[0] + " " + stringArr[1]);
+
+	}
+	
+	public static String[] askname(){
+		String fi = null, la = null;
+		String[] arr = new String[2];
+		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter your first Name: ");
+		
 		try {
-			BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
-			name = bufferRead.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("length = " + name.length());
-		System.out.println("Hello " + name);
+			
+			fi = console.readLine();
+			
+		}catch (IOException e){ e.printStackTrace(); }
+		System.out.println("Now enter your lastname: ");
+		try {
+			
+			la = console.readLine();
+		}catch (IOException e){ e.printStackTrace(); }
+		arr[0] = fi;
+		arr[1] = la;
+		return arr;
 	}
 
 }
